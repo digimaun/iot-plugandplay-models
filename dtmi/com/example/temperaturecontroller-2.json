@@ -55,13 +55,6 @@
       "name": "deviceInformation",
       "displayName": "Device Information interface",
       "description": "Optional interface with basic device hardware information."
-    },
-    {
-      "@type": "Component",
-      "schema": "dtmi:azure:dealio:DeviceInformation;1",
-      "name": "dealioDeviceInformation",
-      "displayName": "Dealio Device Information interface",
-      "description": "Dealio Optional interface with basic device hardware information."
     }
   ]
 }
