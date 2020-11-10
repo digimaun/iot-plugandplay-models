@@ -1,6 +1,6 @@
 {
   "@context": "dtmi:dtdl:context;2",
-  "@id": "dtmi:com:example:TemperatureController;1",
+  "@id": "dtmi:com:example:TemperatureController;2",
   "@type": "Interface",
   "displayName": "Temperature Controller",
   "description": "Device with two thermostats and remote reboot.",
@@ -55,6 +55,13 @@
       "name": "deviceInformation",
       "displayName": "Device Information interface",
       "description": "Optional interface with basic device hardware information."
+    },
+    {
+      "@type": "Component",
+      "schema": "dtmi:azure:dealio:DeviceInformation;1",
+      "name": "dealioDeviceInformation",
+      "displayName": "Dealio Device Information interface",
+      "description": "Dealio Optional interface with basic device hardware information."
     }
   ]
 }
