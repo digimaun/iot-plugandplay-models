@@ -3,7 +3,7 @@
   "@id": "dtmi:test:val:levels:root;1",
   "@type": "Interface",
   "extends": [
-    "dtmi:test:val:levels:c1;2"
+    "dtmi:test:val:levels:c1;1"
   ],
   "contents": [
     {
