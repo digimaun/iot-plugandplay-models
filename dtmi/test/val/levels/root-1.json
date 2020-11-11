@@ -10,6 +10,11 @@
       "@type": "Component",
       "name": "c1",
       "schema": "dtmi:test:val:levels:c1;1"
+    },
+    {
+      "@type": "Component",
+      "name": "mex",
+      "schema": "dtmi:Nexcom:Nise51:xcare;1"
     }
   ]
 }
