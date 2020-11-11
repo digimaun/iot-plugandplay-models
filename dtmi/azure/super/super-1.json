@@ -1,0 +1,14 @@
+{
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:azure:super;1",
+    "@type": "Interface",
+    "displayName": "Azure Super Interface",
+    "contents": [{
+        "@type": "Component",
+        "displayName": {
+            "en": "Exterior"
+        },
+        "name": "Exterior",
+        "schema": "dtmi:meshSystems:txs:blereader;1"
+    }]
+}
