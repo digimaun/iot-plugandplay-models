@@ -8,7 +8,7 @@
         "@type": "Property",
         "name": "manufacturer",
         "displayName": "Manufacturer",
-        "schema": "somebadstuff",
+        "schema": "string",
         "description": "Company name of the device manufacturer. This could be the same as the name of the original equipment manufacturer (OEM). Ex. Contoso."
       },
       {
