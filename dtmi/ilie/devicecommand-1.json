@@ -17,7 +17,7 @@
     },
     {
       "@type": "Command",
-      "description2": "This command will ping to specific ip address.",
+      "description": "This command will ping to specific ip address.",
       "name": "ping",
       "comment": "This command initiates a ping request. This will take time and is implemented as an asynchronous command",
       "request": {
