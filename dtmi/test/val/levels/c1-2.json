@@ -1,0 +1,13 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:test:val:levels:c1;2",
+  "@type": "Interface",
+  "extends" :"dtmi:test:val:levels:base;2",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "lastReboot",
+      "schema": "string"
+    }
+  ]
+}

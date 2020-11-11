@@ -1,0 +1,12 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:test:val:levels:base;2",
+  "@type": "Interface",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "baseSerial",
+      "schema": "string"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:test:val:levels:root;1",
+  "@type": "Interface",
+  "extends": [
+    "dtmi:test:val:levels:c1;2"
+  ],
+  "contents": [
+    {
+      "@type": "Component",
+      "name": "c1",
+      "schema": "dtmi:test:val:levels:c1;1"
+    }
+  ]
+}
