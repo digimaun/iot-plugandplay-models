@@ -5,10 +5,10 @@
     "displayName": "Device Information",
     "contents": [
       {
-        "@type": "Property23",
+        "@type": "Property",
         "name": "manufacturer",
         "displayName": "Manufacturer",
-        "schema": "string",
+        "schema": "somebadstuff",
         "description": "Company name of the device manufacturer. This could be the same as the name of the original equipment manufacturer (OEM). Ex. Contoso."
       },
       {
