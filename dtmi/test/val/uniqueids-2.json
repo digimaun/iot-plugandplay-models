@@ -5,7 +5,7 @@
   "displayName": "uniqueIds",
   "contents": [
     {
-      "@id": "dtmi:test:val:myInvalidIdl;1",
+      "@id": "dtmi:test:val:uniqueIds:myInvalidIdl;1",
       "@type": "Telemetry",
       "name": "temperature",
       "schema": "double"

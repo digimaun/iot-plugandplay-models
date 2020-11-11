@@ -4,7 +4,7 @@
   "@type": "Interface",
   "extends": [
     {
-      "@id": "dtmi:com:example:basic;1",
+      "@id": "dtmi:test:val:InlineSchema:base;1",
       "@type": "Interface",
       "contents": [
         {
