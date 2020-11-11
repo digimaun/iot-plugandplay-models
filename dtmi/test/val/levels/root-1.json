@@ -14,7 +14,7 @@
     {
       "@type": "Component",
       "name": "mex",
-      "schema": "dtmi:Nexcom:Nise51:xcare;1"
+      "schema": "dtmi:Nexcom:Nise51:Xcare;1"
     }
   ]
 }
