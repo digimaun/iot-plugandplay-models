@@ -39,9 +39,6 @@ jobs:
                   if [ $? -eq 0 ]
                   then
                       echo "Validation OK: $f"
-                  else
-                      echo "Validation FAILED: $f"
-                      exit $?
                   fi
               else
                 echo "Skipping validation: $f"
@@ -92,7 +89,7 @@ jobs:
           done
           exit $exit_code
         shell: bash
-  reject-deletions:
+  warn-non-models:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -101,29 +98,7 @@ jobs:
       - id: files
         uses: digimaun/get-changed-files@v2
 
-      - name: Reject deletions to Models
-        run: |
-          exit_code=0
-          for f in  ${{ steps.files.outputs.removed }};
-          do
-            if [[ $f =~ ^dtmi([\/\\][a-z0-9_]+){2,}-([1-9][0-9]{0,8}).json$ ]]
-            then
-              echo "Deletions aren't allowed to existing DTDL files: $f"
-              exit_code=1
-            fi
-          done
-          exit $exit_code
-        shell: bash
-  reject-non-models:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - id: files
-        uses: digimaun/get-changed-files@v2
-
-      - name: Reject deletions to Models
+      - name: Warn on non-model changes
         run: |
           exit_code=0
           for f in  ${{ steps.files.outputs.added_modified }};
@@ -132,8 +107,7 @@ jobs:
               then
                   echo "skipping DTDL file $f"
               else
-                echo "edits made to non-DTDL files is not allowed: $f"
-                exit_code=1
+                echo "::warning file=$f::Please review non-DTDL file changes."
               fi
           done
           exit $exit_code
