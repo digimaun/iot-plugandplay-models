@@ -1,5 +1,7 @@
 # PR Requirements
 
+Hi there!
+
 Any user can submit PRs to add new models to this repo. The PRs must follow the  guidelines described in this document.
 
 ## Creating good pull requests
