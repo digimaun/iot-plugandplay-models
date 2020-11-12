@@ -6,7 +6,7 @@ on:
     paths:
       - '**/*'
 jobs:
-  validate-models:
+  validate-dtdl-models:
     runs-on: ubuntu-latest
     steps:
       - name: Pull DMR tools snapshot
@@ -45,7 +45,7 @@ jobs:
               fi
           done
         shell: bash
-  reject-edits:
+  reject-model-edits:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -67,7 +67,7 @@ jobs:
           done
           exit $exit_code
         shell: bash
-  reject-renames:
+  reject-model-renames:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -89,7 +89,29 @@ jobs:
           done
           exit $exit_code
         shell: bash
-  warn-non-models:
+  reject-model-deletions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - id: files
+        uses: digimaun/get-changed-files@v2
+
+      - name: Reject deletions to Models
+        run: |
+          exit_code=0
+          for f in  ${{ steps.files.outputs.removed }};
+          do
+            if [[ $f =~ ^dtmi([\/\\][a-z0-9_]+){2,}-([1-9][0-9]{0,8}).json$ ]]
+            then
+              echo "Deletions aren't allowed to existing DTDL files: $f"
+              exit_code=1
+            fi
+          done
+          exit $exit_code
+        shell: bash
+  warn-non-model-changes:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
