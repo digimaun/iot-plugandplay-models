@@ -10,7 +10,7 @@ Related tools, samples, and specs can be found in the [Azure/iot-plugandplay-mod
 1. Fork the public GitHub repo: [https://github.com/Azure/iot-plugandplay-models](https://github.com/Azure/iot-plugandplay-models).
 1. Clone the forked repo. Optionally create a new branch to keep your changes isolated from the `main` branch.
 1. Add the new interfaces to the `dtmi` folder using the folder/filename convention. See the [add-models](#add-models) tool below.
-1. Validate the models locally using the [scripts to validate changes](#validate-files) section.
+1. Validate the models locally using the `dmr-client` tool to [validate](#validate-files).
 1. Commit the changes locally and push to your fork.
 1. From your fork, create a PR that targets the `main` branch. See [Creating an issue or pull request](https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/creating-an-issue-or-pull-request) docs.
 1. Review the [PR requirements](pr-reqs.md)
@@ -21,11 +21,11 @@ Microsoft will respond to a PR with all checks in 3 business days.
 
 ## `dmr-client` Tool
 
-The tools used to validate the models during the PR checks can also be used to add and valdidate the DTDL interfaces locally.
+The tools used to validate the models during the PR checks can also be used to add and validate the DTDL interfaces locally.
 
 > Note: These tools require the [.NET SDK](https://dotnet.microsoft.com/download) (3.1 or greater)
 
-### Install drm-client
+### Install `dmr-client`
 
 #### Linux/Bash
 
@@ -39,12 +39,12 @@ curl -L https://aka.ms/install-dmr-client-linux | bash
 iwr https://aka.ms/install-dmr-client-windows -UseBasicParsing | iex
 ```
 
-### Add a Model to the `dtmi/` folder
+### Import a Model to the `dtmi/` folder
 
 If you have your model already stored in json files, you can use the `dmr-client import` command to add those to the `dtmi/` folder with the right file name.
 
 ```bash
-# from the repo root folder
+# from the local repo root folder
 dmr-client import --model-file "MyThermostat.json"
 ```
 
@@ -73,6 +73,14 @@ The Device Model Repo includes additional [requirements](pr-reqs.md), these can 
 
 ```bash
 dmr-client validate --model-file ./my/model/file.json --repo . --strict true
+```
+
+#### Export models
+
+Models can be exported from a given repo (local or remote) to a single file using a JSON Array. 
+
+```bash
+dmr-client export --dtmi "dtmi:com:example:TemperatureController;1" -o TemperatureController.expanded.json
 ```
 
 ## Consuming
