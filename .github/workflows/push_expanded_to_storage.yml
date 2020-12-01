@@ -2,7 +2,7 @@ name: push_expanded_to_azure_storage
 
 on:
   push:
-    branches: [main]
+    branches: [improve_wf]
     paths:
       - 'dtmi/**/*.json'
 

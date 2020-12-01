@@ -2,7 +2,7 @@ name: validate_models
 
 on:
   pull_request:
-    branches: [main]
+    branches: [improve_wf]
     paths:
       - '**/*'
 jobs:
