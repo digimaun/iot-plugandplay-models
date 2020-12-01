@@ -39,9 +39,10 @@ jobs:
                 then
                   dmr-client validate --model-file $f --repo $PWD --strict
                 else
-                  echo "::error file=$f::Invalid model placement.
-                   Use the dmr-client import command or review the resolution convention spec
-                   https://github.com/Azure/iot-plugandplay-models-tools/wiki/Resolution-Convention#folder-and-file-structure"
+                  echo "::error file=$f::Invalid model placement. 
+                  Use the dmr-client import command or review the resolution convention spec: 
+                  https://github.com/Azure/iot-plugandplay-models-tools/wiki/Resolution-Convention#folder-and-file-structure"
+                  exit 1
                 fi
               else
                 echo "Skipping non-model file: $f"
