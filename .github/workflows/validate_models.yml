@@ -30,7 +30,6 @@ jobs:
 
       - name: Validate Models
         run: |
-          set -ex
           for f in ${{ steps.files.outputs.added_modified }};
           do
               if [[ $f =~ ^dtmi([\/\\]) ]]
